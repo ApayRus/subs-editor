@@ -1,0 +1,35 @@
+.linearBackground {
+	background-size: 100% 44px;
+	background-image: linear-gradient(
+		white,
+		white 1px,
+		#ccc 2px,
+		#ccc 1px,
+		white 2px
+	);
+}
+
+.container {
+	width: calc(100% - 64px);
+}
+
+.textarea {
+	width: 100%;
+	padding: 0;
+	direction: rtl;
+	font-family: 'Scheherazade New';
+	resize: none;
+	display: inline-block;
+	overflow-x: scroll;
+	line-height: 44px;
+	white-space: nowrap;
+	vertical-align: top;
+	border: none;
+	padding-bottom: 0.5rem;
+	font-size: 20px;
+}
+
+.textarea:focus {
+	border: none;
+	outline: none;
+}

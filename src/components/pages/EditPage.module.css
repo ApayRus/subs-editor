@@ -1,0 +1,17 @@
+.wavesurferContainer {
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 10;
+}
+
+.textAndPhrases {
+	margin-bottom: 64px;
+	display: flex;
+}
+
+.footer {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+}

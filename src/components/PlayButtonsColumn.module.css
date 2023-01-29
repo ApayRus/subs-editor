@@ -1,0 +1,25 @@
+.button-0 {
+	display: none !important;
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+
+.num {
+	font-size: small;
+	color: grey;
+}
+
+.active {
+	color: red;
+}
+
+.container {
+	width: 64px;
+	display: flex;
+	flex-direction: column;
+	padding-inline: 2px;
+}

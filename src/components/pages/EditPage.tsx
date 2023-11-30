@@ -1,4 +1,11 @@
-import { Button, Fab, Grid, TextField, Typography } from '@mui/material'
+import {
+	Button,
+	Fab,
+	Grid,
+	IconButton,
+	TextField,
+	Typography
+} from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
 import PlayIcon from '@mui/icons-material/PlayArrow'
 import PauseIcon from '@mui/icons-material/Pause'
@@ -91,9 +98,12 @@ const EditPage = () => {
 						label='id'
 						value={state.id}
 						onChange={handleChange}
-						sx={{ width: '100%' }}
+						sx={{ width: '50%' }}
 						required
 					/>
+					<IconButton onClick={handleSubmit}>
+						<SaveIcon />
+					</IconButton>
 				</Grid>
 				<Grid item xs={9} md={3}>
 					<TextField
@@ -122,15 +132,6 @@ const EditPage = () => {
 								{state.localStorageId || 'No'}
 							</Typography>
 						</Typography>
-					</Grid>
-					<Grid item xs={6} textAlign='right'>
-						<Button
-							onClick={handleSubmit}
-							variant='outlined'
-							startIcon={<SaveIcon />}
-						>
-							Save
-						</Button>
 					</Grid>
 				</Grid>
 			</Grid>

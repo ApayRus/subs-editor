@@ -15,14 +15,14 @@ const startIndex = 5
 
 const materials = textArray.map((text, index) => {
 	const id = String(startIndex + index).padStart(3, '0')
-	const mediaLink = getMediaLink('book2', id)
+	const mediaLink = getMediaLink('book1', id)
 	return {
-		id,
-		localStorageId: id,
+		id: `book1/${id}`,
+		localStorageId: `book1/${id}`,
 		mediaLink,
 		text: text.trim(),
 		phrases: [{ start: 0, end: 0 }]
 	}
 })
 
-writeFileSync('./output.txt', JSON.stringify(materials, null, 2), 'utf-8')
+writeFileSync('./book1.txt', JSON.stringify(materials, null, 2), 'utf-8')

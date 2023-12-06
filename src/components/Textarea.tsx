@@ -1,12 +1,13 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { CSSProperties, ChangeEvent, useEffect, useState } from 'react'
 import styles from './Textarea.module.css'
 
 interface Props {
 	text: string
 	setText: (text: string) => void
+	style?: CSSProperties
 }
 
-const Textarea: React.FC<Props> = ({ text, setText }) => {
+const Textarea: React.FC<Props> = ({ text = '', setText, style }) => {
 	const [state, setState] = useState({ rows: 1 })
 
 	const extraEndRows = 0
@@ -36,6 +37,7 @@ const Textarea: React.FC<Props> = ({ text, setText }) => {
 				rows={state.rows}
 				value={text}
 				placeholder='enter text here'
+				style={style}
 			/>
 		</div>
 	)

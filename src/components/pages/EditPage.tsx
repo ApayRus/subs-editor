@@ -26,6 +26,7 @@ export class Material {
 	mediaLink = ''
 	title = ''
 	text = ''
+	textTr = ''
 	phrases: Phrase[] = [{ id: '0', start: 0, end: 0 }]
 }
 
@@ -36,7 +37,7 @@ const EditPage = () => {
 		{ id: '0', start: 0, end: 0 }
 	])
 
-	const { mediaLink } = state
+	const { mediaLink, text, textTr } = state
 
 	const params = useParams()
 
@@ -59,10 +60,12 @@ const EditPage = () => {
 	const waveformContainerRef = useRef<HTMLDivElement>(null)
 	const timelineContainerRef = useRef<HTMLDivElement>(null)
 
-	const { text } = state
-
 	const setText = (text: string) => {
 		setState(oldState => ({ ...oldState, text }))
+	}
+
+	const setTextTr = (textTr: string) => {
+		setState(oldState => ({ ...oldState, textTr }))
 	}
 
 	const {
@@ -144,6 +147,13 @@ const EditPage = () => {
 			<div className={styles.textAndPhrases}>
 				<Textarea {...{ text, setText }} />
 				<PlayButtonsColumn {...{ playPhrase, phrases, currentPhraseNum }} />
+				<Textarea
+					{...{
+						text: textTr,
+						setText: setTextTr,
+						style: { direction: 'ltr', textAlign: 'left', fontSize: 16 }
+					}}
+				/>
 			</div>
 			{/* <pre>{JSON.stringify(phrases, null, 2)}</pre> */}
 			<div className={styles.footer}>

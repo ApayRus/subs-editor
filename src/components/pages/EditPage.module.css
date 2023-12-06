@@ -6,8 +6,18 @@
 }
 
 .textAndPhrases {
-	margin-bottom: 64px;
+	/* margin-bottom: 64px; */
 	display: flex;
+}
+
+.bottomNav {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 10px 64px 10px;
+}
+
+.bottomNav a {
+	text-decoration: none;
 }
 
 .footer {

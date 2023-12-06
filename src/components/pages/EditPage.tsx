@@ -92,6 +92,11 @@ const EditPage = () => {
 		setState(oldState => ({ ...oldState, localStorageId: oldState.id }))
 	}
 
+	const materials = Object.keys(localStorage).sort()
+	const index = materials.findIndex(elem => elem === state.id)
+	const nextId = materials[index + 1]
+	const prevId = materials[index - 1]
+
 	return (
 		<div>
 			<Grid container spacing={1} padding={1}>
@@ -154,6 +159,10 @@ const EditPage = () => {
 						style: { direction: 'ltr', textAlign: 'left', fontSize: 16 }
 					}}
 				/>
+			</div>
+			<div className={styles.bottomNav}>
+				<Link to={`/material/${prevId}`}>{'<'} prev </Link>
+				<Link to={`/material/${nextId}`}> next {'>'}</Link>
 			</div>
 			{/* <pre>{JSON.stringify(phrases, null, 2)}</pre> */}
 			<div className={styles.footer}>
